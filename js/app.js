@@ -8,8 +8,7 @@ var Enemy = function(x, y, speed) {
     this.sprite = 'images/enemy-bug.png';
 
     // Sets the initial location for this enemy
-    // Set to the negative of its width to have it start right off the canvas
-    this.x = -101;
+    this.x = x;
     this.y = y;
 
     // Sets the speed of this enemy
@@ -46,8 +45,11 @@ Enemy.prototype.render = function() {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
+var enemy1 = new Enemy(-100, 100, 1);
+var enemy2 = new Enemy(-100, 200, 2);
+var enemy3 = new Enemy(-100, 300, 1);
 
-
+var allEnemies = [enemy1, enemy2, enemy3];
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
