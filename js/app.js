@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function(speed) {
+var Enemy = function(x, y, speed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -10,6 +10,7 @@ var Enemy = function(speed) {
     // Sets the initial location for this enemy
     // Set to the negative of its width to have it start right off the canvas
     this.x = -101;
+    this.y = y;
 
     // Sets the speed of this enemy
     this.speed = speed;
@@ -21,6 +22,15 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+
+    // Creates a move variable where the Enemy will move at
+    // width of one block multiplied by the speed set in the 
+    // Enemy object instantiation
+    move = dt * 100 * this.speed;
+
+    // Updates the x-axis location of the Enemy object based
+    // upon the move variable value
+    this.x = this.x + move;
 };
 
 // Draw the enemy on the screen, required method for game
