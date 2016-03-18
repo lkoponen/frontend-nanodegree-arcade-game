@@ -43,7 +43,7 @@ Enemy.prototype.render = function() {
 var Player = function(x, y) {
     // The image/sprite for our player, this uses
     // a helper we've provided to easily load images
-    this.sprite = 'images/char-pink-girl.png';
+    this.sprite = 'images/char-boy.png';
 
     // Sets the initial location for the player
     this.x = x;
@@ -56,6 +56,8 @@ Player.prototype.update = function() {
 
 // Creates a render() method in the Player prototype
 Player.prototype.render = function(){
+    //Add the player sprite to the canvas
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
 
 //Creates a handleInput() method in the Player prototype
@@ -71,7 +73,7 @@ var enemy3 = new Enemy(-100, 300, 1);
 var allEnemies = [enemy1, enemy2, enemy3];
 
 // Place the player object in a variable called player
-var player = new Player(300, 600);
+var player = new Player(200, 400);
 
 
 // This listens for key presses and sends the keys to your
