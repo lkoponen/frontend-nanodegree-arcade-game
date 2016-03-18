@@ -30,6 +30,13 @@ Enemy.prototype.update = function(dt) {
     // Updates the x-axis location of the Enemy object based
     // upon the move variable value
     this.x = this.x + move;
+
+    // Checks for collision with player and sends player back
+    // to start on impact
+    if (this.x == player.x && this.y == player.y) {
+        player.x = 200;
+        player.y = 400;
+    }
 };
 
 // Draw the enemy on the screen, required method for game
@@ -63,6 +70,7 @@ Player.prototype.render = function(){
 //Creates a handleInput() method in the Player prototype
 Player.prototype.handleInput = function(){
 }
+
 
 // Now instantiate your objects.
 var enemy1 = new Enemy(-100, 100, 1);
