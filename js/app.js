@@ -84,8 +84,9 @@ Player.prototype.handleInput = function(key){
             break;
         case 'up':
             this.y = this.y - 82;
-            if (this.y < -2) {
-                this.y = -2;
+            if (this.y < 80) {
+                this.y = 408;
+                this.x = 200;
             }
             break;
         case 'right':
