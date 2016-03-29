@@ -39,9 +39,9 @@ Enemy.prototype.update = function(dt) {
 
     // Checks for collision with player and sends player back
     // to start on impact
-    if (this.x == player.x && this.y == player.y) {
+    if (this.x < player.x + 101 && this.x + 101 > player.x && this.y == player.y) {
         player.x = 200;
-        player.y = 400;
+        player.y = 408;
     }
 };
 
