@@ -33,7 +33,7 @@ Enemy.prototype.update = function(dt) {
 
     // Moves enemy back to starting location once moved off
     // screen
-    if (this.x > 400) {
+    if (this.x > 500) {
         this.x = -100;
     }
 
