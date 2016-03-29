@@ -50,7 +50,7 @@ Enemy.prototype.render = function() {
 var Player = function(x, y) {
     // The image/sprite for our player, this uses
     // a helper we've provided to easily load images
-    this.sprite = 'images/char-boy.png';
+    this.sprite = 'images/char-princess-girl.png';
 
     // Sets the initial location for the player
     this.x = x;
@@ -69,6 +69,7 @@ Player.prototype.render = function(){
 
 //Creates a handleInput() method in the Player prototype
 Player.prototype.handleInput = function(){
+    
 }
 
 
