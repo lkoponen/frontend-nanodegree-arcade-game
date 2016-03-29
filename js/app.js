@@ -68,8 +68,23 @@ Player.prototype.render = function(){
 }
 
 //Creates a handleInput() method in the Player prototype
-Player.prototype.handleInput = function(){
-    
+Player.prototype.handleInput = function(key){
+    switch(key) {
+        case 'left':
+            this.x = this.x - 101;
+            break;
+        case 'up':
+            this.y = this.y - 82;
+            break;
+        case 'right':
+            this.x = this.x + 101;
+            break;
+        case 'down':
+            this.y = this.y + 82;
+            break;
+        default:
+            break;
+    } 
 }
 
 
