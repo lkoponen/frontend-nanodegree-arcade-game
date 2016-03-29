@@ -72,15 +72,27 @@ Player.prototype.handleInput = function(key){
     switch(key) {
         case 'left':
             this.x = this.x - 101;
+            if (this.x < 1) {
+                this.x = 1;
+            }
             break;
         case 'up':
             this.y = this.y - 82;
+            if (this.y < -2) {
+                this.y = -2;
+            }
             break;
         case 'right':
             this.x = this.x + 101;
+            if (this.x > 400) {
+                this.x = 400;
+            }
             break;
         case 'down':
             this.y = this.y + 82;
+            if (this.y > 408) {
+                this.y = 408;
+            }
             break;
         default:
             break;
@@ -97,7 +109,7 @@ var enemy3 = new Enemy(-100, 300, 1);
 var allEnemies = [enemy1, enemy2, enemy3];
 
 // Place the player object in a variable called player
-var player = new Player(200, 400);
+var player = new Player(200, 408);
 
 
 // This listens for key presses and sends the keys to your
