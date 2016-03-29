@@ -31,6 +31,12 @@ Enemy.prototype.update = function(dt) {
     // upon the move variable value
     this.x = this.x + move;
 
+    // Moves enemy back to starting location once moved off
+    // screen
+    if (this.x > 400) {
+        this.x = -100;
+    }
+
     // Checks for collision with player and sends player back
     // to start on impact
     if (this.x == player.x && this.y == player.y) {
@@ -101,9 +107,9 @@ Player.prototype.handleInput = function(key){
 
 
 // Now instantiate your objects.
-var enemy1 = new Enemy(-100, 100, 1);
-var enemy2 = new Enemy(-100, 200, 2);
-var enemy3 = new Enemy(-100, 300, 1);
+var enemy1 = new Enemy(-100, 80, 1);
+var enemy2 = new Enemy(-100, 162, 2);
+var enemy3 = new Enemy(-100, 244, 1.5);
 
 // Place all enemy objects in an array called allEnemies
 var allEnemies = [enemy1, enemy2, enemy3];
