@@ -25,7 +25,7 @@ Enemy.prototype.update = function(dt) {
     // Creates a move variable where the Enemy will move at
     // width of one block multiplied by the speed set in the 
     // Enemy object instantiation
-    move = dt * 100 * this.speed;
+    var move = dt * 100 * this.speed;
 
     // Updates the x-axis location of the Enemy object based
     // upon the move variable value
@@ -61,17 +61,18 @@ var Player = function(x, y) {
     // Sets the initial location for the player
     this.x = x;
     this.y = y;
-}
+};
 
 // Creates an update() method in the Player prototype
 Player.prototype.update = function() {
-}
+
+};
 
 // Creates a render() method in the Player prototype
 Player.prototype.render = function(){
     //Add the player sprite to the canvas
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 //Creates a handleInput() method in the Player prototype
 Player.prototype.handleInput = function(key){
@@ -84,11 +85,9 @@ Player.prototype.handleInput = function(key){
             break;
         case 'up':
             this.y = this.y - 82;
-            if (this.y < 80) {
-                this.y = 408;
-                this.x = 200;
-            }
+            this.reset();
             break;
+
         case 'right':
             this.x = this.x + 101;
             if (this.x > 400) {
@@ -104,8 +103,15 @@ Player.prototype.handleInput = function(key){
         default:
             break;
     } 
-}
+};
 
+// If the player object makes it to the end, resets the game
+Player.prototype.reset = function() {
+    if (this.y < 80) {
+        this.y = 408;
+        this.x = 200;
+    }
+};
 
 // Now instantiate your objects.
 var enemy1 = new Enemy(-100, 80, 1);
