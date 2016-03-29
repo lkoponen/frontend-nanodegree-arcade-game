@@ -23,7 +23,7 @@ Enemy.prototype.update = function(dt) {
     // all computers.
 
     // Creates a move variable where the Enemy will move at
-    // width of one block multiplied by the speed set in the 
+    // width of one block multiplied by the speed set in the
     // Enemy object instantiation
     var move = dt * 100 * this.speed;
 
@@ -102,7 +102,7 @@ Player.prototype.handleInput = function(key){
             break;
         default:
             break;
-    } 
+    }
 };
 
 // If the player object makes it to the end, resets the game
